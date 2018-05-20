@@ -8,4 +8,6 @@ public interface ArticleService {
 
     Set<ArticleDto> getAll();
 
+    ArticleDto getById(String id);
+
 }

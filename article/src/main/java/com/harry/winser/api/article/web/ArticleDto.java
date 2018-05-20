@@ -1,14 +1,18 @@
 package com.harry.winser.api.article.web;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ArticleDto {
 
     private final String id;
+    @JsonDeserialize(using = DateDeseraliser.class)
     private final LocalDateTime date;
     private final String type;
     private final String title;

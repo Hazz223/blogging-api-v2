@@ -1,12 +1,20 @@
-plugins {
-    id "org.springframework.boot" version "2.0.2.RELEASE"
+
+apply plugin: "org.springframework.boot"
+
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springboot}"
+    }
 }
 
 dependencies {
 
     compile project (":article")
 
-    compile "org.springframework.boot:spring-boot-starter-web:2.0.2.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-web:${springboot}"
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
